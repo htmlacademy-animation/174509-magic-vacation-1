@@ -17,6 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: all 1s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -138,7 +139,7 @@
   }
 
   .social-block--active & {
-    opacity: 1;
+    //opacity: 1;
     pointer-events: auto;
   }
 
@@ -168,6 +169,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -242,3 +244,23 @@
     }
   }
 }
+
+// .social-block--active {
+//  &:hover {
+//   .social-block__link--fb {
+//     opacity: 1;
+//     transition: opacity .3s ease;
+//   }
+
+//   .social-block__link--insta {
+//     opacity: 1;
+//     transition: opacity .8s ease;
+//   }
+
+//   .social-block__link--vk {
+//     opacity: 1;
+//     transition: opacity .12s ease;
+//   }
+//  }
+
+// }
