@@ -3,7 +3,11 @@ export default () => {
   socialBlock.addEventListener(`mouseover`, function () {
     socialBlock.classList.add(`social-block--active`);
   });
+  socialBlock.addEventListener(`click`, function () {
+    socialBlock.classList.add(`social-focus`);
+  });
   socialBlock.addEventListener(`mouseleave`, function () {
     socialBlock.classList.remove(`social-block--active`);
+    socialBlock.classList.remove(`social-focus`);
   });
 };

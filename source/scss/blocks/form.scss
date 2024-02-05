@@ -34,7 +34,7 @@
   margin-right: 3rem;
   padding: 0 5.6rem;
   height: 6rem;
-  width: calc(100% - 21rem);
+  width: 0;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -43,6 +43,10 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  position: relative;
+  right: 0;
+  margin-left: auto;
+  transition: width 1s ease;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -60,7 +64,7 @@
   @media (orientation: portrait) {
     margin-right: 1rem;
     padding: 0 2.5rem;
-    width: calc(100% - 5rem);
+    width: 0;
     height: 4rem;
     font-size: 1.6rem;
   }
@@ -72,14 +76,23 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-right: 1rem;
     padding: 0 2.5rem;
-    width: calc(100% - 5rem);
+    width: 0;
     height: 4rem;
     font-size: 1.6rem;
   }
 }
 
+.form__field--show {
+  width: calc(100% - 21rem);
+  left: auto;
+
+  @media (max-width: $tablet) {
+    width: calc(100% - 5rem);
+  }
+}
+
 .form__button {
-  flex-grow: 1;
+  width: 149px;
 
   @media (orientation: portrait) {
     position: relative;
