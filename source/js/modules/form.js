@@ -13,4 +13,9 @@ export default () => {
       adaptPlaceholder(emailFields[i]);
     });
   }
+
+  document.addEventListener(`DOMContentLoaded`, () => {
+    const formField = document.querySelector(`.js-form-field`);
+    formField.classList.add(`form__field--show`);
+  });
 };

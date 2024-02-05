@@ -270,6 +270,7 @@
     &.active {
       &::after {
         display: block;
+        width: 100%;
       }
     }
 
