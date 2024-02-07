@@ -14,8 +14,29 @@ export default () => {
     });
   }
 
-  document.addEventListener(`DOMContentLoaded`, () => {
+  document.addEventListener(`DOMContentLoaded`, function () {
+    const gameScreen = document.getElementById(`game`);
     const formField = document.querySelector(`.js-form-field`);
-    formField.classList.add(`form__field--show`);
+
+    function checkActiveClass() {
+      if (gameScreen.classList.contains(`active`)) {
+        formField.classList.add(`form__field--show`);
+      } else {
+        formField.classList.remove(`form__field--show`);
+      }
+    }
+
+    const observer = new MutationObserver(function (mutationsList) {
+      for (let mutation of mutationsList) {
+        if (mutation.type === `attributes` && mutation.attributeName === `class`) {
+          checkActiveClass();
+        }
+      }
+    });
+
+    observer.observe(gameScreen, {attributes: true});
+
+    checkActiveClass();
   });
+
 };

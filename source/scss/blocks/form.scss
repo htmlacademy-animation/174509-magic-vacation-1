@@ -44,7 +44,6 @@
   border-radius: 3rem;
   outline: none;
   position: relative;
-  right: 0;
   margin-left: auto;
   transition: width 1s ease;
 
@@ -84,7 +83,6 @@
 
 .form__field--show {
   width: calc(100% - 21rem);
-  left: auto;
 
   @media (max-width: $tablet) {
     width: calc(100% - 5rem);
@@ -92,7 +90,7 @@
 }
 
 .form__button {
-  width: 149px;
+  width: 14%;
 
   @media (orientation: portrait) {
     position: relative;
