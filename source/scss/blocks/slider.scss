@@ -281,7 +281,6 @@
   opacity: 0;
   position: relative;
   left: 2rem;
-  transition: opacity .6s ease .2s, left .2s ease-in-out .2s;
 }
 
 .swiper-slide-active {
@@ -295,7 +294,6 @@
   .slider__item-text {
     opacity: 1;
     left: 0;
-    transition-delay: .3s;
   }
 
   @media (max-width: $mobile) {
@@ -306,10 +304,5 @@
   }
 }
 
-.swiper-slide-prev {
-  opacity: 0;
-  left: -10px;
-  transition: opacity .1s ease .1s, left .2s ease-out .3s;
-}
 
 
