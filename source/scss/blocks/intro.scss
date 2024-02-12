@@ -96,7 +96,6 @@
   position: relative;
   top: 20px;
   opacity: 0;
-  transition: top .3s ease, opacity 1.2s ease;
 
   @media (min-width: $stop-scaling) {
     width: 509px;

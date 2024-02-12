@@ -35,6 +35,8 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transform: translateX(-2rem);
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -177,7 +179,7 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
-
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -242,7 +244,6 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color .2s ease;
 
     &::after {
       content: "";
@@ -252,10 +253,8 @@
       height: 2px;
       background-color: $c-light;
       right: 0;
-      transition: width .2s ease;
 
       @media (max-width: $tablet) and (orientation: portrait) {
-        left: 0;
         right: 0;
         background-color: $c-dark;
       }
@@ -271,6 +270,8 @@
       &::after {
         display: block;
         width: 100%;
+        right: auto;
+        left: 0;
       }
     }
 
