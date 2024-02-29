@@ -3,7 +3,7 @@
 }
 
 .intro__message {
-  transition: top .3s ease, opacity 1.2s ease;
+  transition: top .5s ease .2s, opacity 1.2s ease .2s;
 }
 
 .slider__item-text {
@@ -92,7 +92,7 @@
   }
 
   .screen__footer {
-    transition: transform 0.3s cubic-bezier(.06, .66, 0, .94);
+    transition: transform .2s ease;
     transform: translateY(0);
   }
 
@@ -107,3 +107,10 @@
     }
   }
 }
+
+.overlap--show {
+    bottom: 0;
+    transition: bottom 2s ease;
+}
+
+

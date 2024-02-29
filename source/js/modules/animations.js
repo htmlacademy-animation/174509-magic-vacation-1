@@ -4,7 +4,7 @@ export default () => {
 
     // intro
     const introMessage = document.querySelector(`.js-intro-message`);
-    introMessage.classList.add(`show-intro-message`);
+    introMessage.classList.add(`intro__message--show`);
 
     // game
     const gameScreen = document.getElementById(`game`);
@@ -29,12 +29,31 @@ export default () => {
     observer.observe(gameScreen, {attributes: true});
 
     checkActiveClass();
+
+    const body = document.querySelector(`.js-body`);
+    body.classList.add(`loaded`);
+
+    // overlap
+    const overlap = document.querySelector(`.overlap`);
+    const prizes = document.querySelector(`[data-href="prizes"]`);
+
+    function addOverlap(link) {
+      link.addEventListener(`click`, (event) => {
+        event.preventDefault();
+        overlap.classList.add(`overlap--show`);
+        setTimeout(onAnimationComplete, 2000);
+
+      });
+
+      function onAnimationComplete() {
+        window.location = link.href;
+        overlap.classList.remove(`overlap--show`);
+      }
+    }
+
+    addOverlap(prizes);
+
   });
 
-  const body = document.querySelector(`.js-body`);
-  body.classList.add(`loaded`);
-
-  const mainLink = document.querySelector(`[data-href="top"]`);
-  mainLink.classList.add(`active`);
 
 };
