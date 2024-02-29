@@ -136,11 +136,11 @@
       height: 1.1rem;
     }
   }
-}
 
-.show-intro-message {
-  top: 0;
+  &--show {
+    top: 0;
   opacity: 1;
+  }
 }
 
 .intro__label {
