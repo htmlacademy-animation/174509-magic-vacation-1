@@ -2,6 +2,21 @@
   position: relative;
   display: flex;
   align-items: center;
+  gap: 3rem;
+  justify-content: flex-end;
+  max-width: 100%;
+
+  @media (min-width: $stop-scaling) {
+    gap: 30px;
+  }
+
+  @media (orientation: portrait) {
+    gap: 1rem;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    gap: 1rem;
+  }
 }
 
 .form__label {
@@ -29,12 +44,14 @@
   }
 }
 
+.form__field-wrap {
+  width: 100%;
+  text-align: right;
+}
+
 .form__field {
-  flex: none;
-  margin-right: 3rem;
   padding: 0 5.6rem;
   height: 6rem;
-  width: 0;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -44,14 +61,15 @@
   border-radius: 3rem;
   outline: none;
   position: relative;
-  margin-left: auto;
+  animation-name: extension;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 
   &:focus {
     border: 1px solid $c-purple;
   }
 
   @media (min-width: $stop-scaling) {
-    margin-right: 30px;
     padding: 0 56px;
     height: 60px;
     width: calc(100% - 210px);
@@ -60,7 +78,6 @@
   }
 
   @media (orientation: portrait) {
-    margin-right: 1rem;
     padding: 0 2.5rem;
     width: 0;
     height: 4rem;
@@ -72,7 +89,6 @@
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
-    margin-right: 1rem;
     padding: 0 2.5rem;
     width: 0;
     height: 4rem;
