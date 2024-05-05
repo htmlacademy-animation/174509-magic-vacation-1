@@ -61,9 +61,8 @@
   border-radius: 3rem;
   outline: none;
   position: relative;
-  animation-name: extension;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  opacity: 0;
+  width: 0%;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -94,18 +93,22 @@
     height: 4rem;
     font-size: 1.6rem;
   }
-}
 
-.form__field--show {
-  width: calc(100% - 21rem);
-
-  @media (max-width: $tablet) {
-    width: calc(100% - 5rem);
+  &::placeholder {
+    opacity: 0;
   }
 }
 
+
+// .form__field--show {
+//   width: calc(100% - 21rem);
+
+//   @media (max-width: $tablet) {
+//     width: calc(100% - 5rem);
+//   }
+// }
+
 .form__button {
-  width: 14%;
 
   @media (orientation: portrait) {
     position: relative;
@@ -151,24 +154,24 @@
   }
 }
 
-.form--result {
-  .form__field {
-    width: calc(100% - 31rem);
+// .form--result {
+//   .form__field {
+//     width: calc(100% - 31rem);
 
-    @media (min-width: $stop-scaling) {
-      width: calc(100% - 310px);
-    }
+//     @media (min-width: $stop-scaling) {
+//       width: calc(100% - 310px);
+//     }
 
-    @media (orientation: portrait) {
-      width: calc(100% - 5rem);
-    }
+//     @media (orientation: portrait) {
+//       width: calc(100% - 5rem);
+//     }
 
-    @media (max-width: $tablet) and (orientation: landscape) {
-      width: calc(100% - 9rem);
-    }
+//     @media (max-width: $tablet) and (orientation: landscape) {
+//       width: calc(100% - 9rem);
+//     }
 
-    @media (max-width: $mobile) and (orientation: landscape) {
-      width: calc(100% - 5rem);
-    }
-  }
-}
+//     @media (max-width: $mobile) and (orientation: landscape) {
+//       width: calc(100% - 5rem);
+//     }
+//   }
+// }

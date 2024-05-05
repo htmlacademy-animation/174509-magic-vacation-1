@@ -87,6 +87,7 @@
 }
 
 .intro__message {
+  --startY: 20px;
   flex: none;
   width: 50.9rem;
   max-width: 50%;
@@ -94,8 +95,11 @@
   font-size: 2.4rem;
   line-height: 1.27;
   position: relative;
-  top: 20px;
-  opacity: 0;
+  animation-name: fadeInTop, fadeIn;
+  animation-duration: .5s, 1.2s;
+  animation-timing-function: ease, ease;
+  animation-delay: .2s, .2s;
+  animation-fill-mode: backwards, backwards;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -137,24 +141,27 @@
     }
   }
 
-  &--show {
-    top: 0;
-  opacity: 1;
-  }
 }
 
 .intro__label {
+  --startY: 20px;
   margin: 0 0 1.6rem;
   max-width: 25rem;
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  animation-name: fadeInTop, fadeIn;
+  animation-duration: .5s, .5s;
+  animation-timing-function: ease, ease;
+  animation-delay: .9s, .9s;
+  animation-fill-mode: backwards, backwards;
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 16px;
     width: 250px;
     font-size: 24px;
   }
+
 }
 
 .intro__date {
