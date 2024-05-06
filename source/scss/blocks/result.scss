@@ -22,17 +22,18 @@
   }
 }
 
-.result__image {
+.result__image,
+.result__picture-box {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   z-index: -1;
+  width: 100vmin;
+  height: 50vmin;
+  margin: 0 auto;
+  top: 34%;
 
   @media (orientation: portrait) {
     left: -1rem;
@@ -51,6 +52,28 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  @media (max-width: $tablet) {
+    height: 65vmin;
+    top: 38%;
+  }
+
+  @media (max-width: $mobile) {
+    height: 100vmin;
+    margin: 0 auto;
+    top: 34%;
+  }
+}
+
+.result__picture {
+  position: relative;
+  width: inherit;
+  height: inherit;
+
+  picture {
+    position: absolute;
+    height: auto;
   }
 }
 
@@ -265,6 +288,99 @@
 
     @media (max-width: $mobile) and (orientation: landscape) {
       width: 45rem;
+    }
+  }
+}
+
+picture {
+  &.result__suitcase {
+    width: 45%;
+    top: 8%;
+    left: 23%;
+
+    @media (max-width: $tablet) {
+      width: 65%;
+      top: -2%;
+      left: 11%;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+      top: 0;
+      left: -3%;
+    }
+  }
+  &.result__flamingo {
+    width: 34%;
+    top: 29%;
+    left: 19%;
+    transform-origin: 50% 70%;
+
+
+    @media (max-width: $tablet) {
+      width: 50%;
+      top: 22%;
+      left: 4%;
+    }
+
+    @media (max-width: 767px) {
+      width: 80%;
+      top: 23%;
+      left: -15%;
+    }
+  }
+  &.result__leaf-blue-1 {
+    width: 37%;
+    top: -2%;
+    left: 48%;
+    transform-origin: 15% 75%;
+
+    @media (max-width: $tablet) {
+      width: 52%;
+      top: 0%;
+      left: 50%;
+    }
+
+    @media (max-width: 767px) {
+      width: 80%;
+      top: 1%;
+      left: 57%;
+    }
+  }
+  &.result__leaf-blue-2 {
+    width: 37%;
+    top: 34%;
+    left: 4%;
+    transform-origin: 100% 40%;
+
+    @media (max-width: $tablet) {
+      width: 52%;
+      top: 30%;
+      left: -15%;
+    }
+
+    @media (max-width: 767px) {
+      width: 82%;
+      top: 30%;
+      left: -45%;
+    }
+  }
+  &.result__leaf-green {
+    width: 42%;
+    top: 44%;
+    left: 46%;
+    transform-origin: 20% 75%;
+
+    @media (max-width: $tablet) {
+      width: 60%;
+      top: 20%;
+      left: 44%;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+      top: 40%;
+      left: 47%;
     }
   }
 }

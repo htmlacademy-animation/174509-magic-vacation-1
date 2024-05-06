@@ -11,3 +11,22 @@
   left: 0;
   z-index: 1;
 }
+
+.split__words {
+  display: inline-block;
+  margin-top: -2rem;
+  contain: content;
+  white-space: nowrap;
+
+  &:not(:first-child) {
+    margin-top: -6rem;
+  }
+
+  & > span {
+    padding-top: 2rem;
+    display: inline-block;
+    overflow: hidden;
+    letter-spacing: -0.02em;
+    transform: translate3d(0, 2em, 0);
+  }
+}
