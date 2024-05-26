@@ -77,18 +77,10 @@
 
   @media (max-width: $tablet) and (orientation: portrait) {
     opacity: 0;
-
-    .screen__footer--full & {
-      opacity: 1;
-    }
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     opacity: 0;
-
-    .screen__footer--full & {
-      opacity: 1;
-    }
   }
 }
 
@@ -355,4 +347,10 @@
 
 .screen--rules {
   background-color: $c-dark;
+
+  // .screen__disclaimer {
+  //   ul {
+  //     opacity: 0;
+  //   }
+  // }
 }

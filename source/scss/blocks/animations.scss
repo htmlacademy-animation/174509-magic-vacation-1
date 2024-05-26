@@ -1,5 +1,87 @@
 // animation rules
 
+.screen__footer--full {
+  animation-name: scale-in-left;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+
+  &.screen__footer--close {
+    animation-name: scale-out-left;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+  }
+
+  .screen__footer-wrapper {
+    animation-name: fadeIn;
+    animation-duration: .2s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.screen--rules {
+  &.active {
+    .screen__disclaimer {
+      ul {
+        animation-name: fadeIn;
+        animation-duration: .5s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+.result--negative {
+  .result__button {
+    animation-name: fadeIn;
+    animation-duration: .5s;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+
+    span {
+      --startX: 4rem;
+      --startDeg: 135deg;
+      animation-name: roll-in;
+      animation-duration: .4s;
+      animation-delay: 1.55s;
+      animation-fill-mode: backwards;
+    }
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: .5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+// .fadeIn {
+//   animation-name: fadeIn;
+//   animation-duration: .5s;
+//   animation-delay: 0s;
+//   animation-fill-mode: forwards;
+// }
+
+.slider__control--prev,
+.slider__control--next {
+  animation-name: roll-in;
+  animation-duration: .4s;
+  animation-delay: .6s;
+  animation-fill-mode: backwards;
+}
+
+.slider__control--prev {
+  --startX: -4rem;
+  --startDeg: -135deg;
+}
+
+.slider__control--next {
+  --startX: 4rem;
+  --startDeg: 135deg;
+}
+
 picture {
   &.result__suitcase {
     --startR: 0.1;
@@ -106,6 +188,7 @@ picture {
   }
 
   p {
+    --startX: 2rem;
     animation-name: fadeInRight, fadeIn;
     animation-duration: .4s, .4s;
     animation-fill-mode: backwards;
@@ -209,6 +292,11 @@ picture {
   .slider__item-text {
     transition-delay: .3s;
   }
+}
+
+.slider__pagination.swiper-pagination,
+.slider__controls {
+  transition: opacity .6s ease .4s;
 }
 
 .swiper-slide-prev {

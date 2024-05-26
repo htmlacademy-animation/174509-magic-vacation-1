@@ -60,23 +60,41 @@ export default () => {
 
     // overlap
     const overlap = document.querySelector(`.overlap`);
-    const prizes = document.querySelector(`[data-href="prizes"]`);
+    const prizesLink = document.querySelector(`[data-href="prizes"]`);
 
     function addOverlap(link) {
       link.addEventListener(`click`, (event) => {
         event.preventDefault();
         overlap.classList.add(`overlap--show`);
-        setTimeout(onAnimationComplete, 600);
-
+        setTimeout(() => {
+          onAnimationComplete(link);
+          overlap.classList.remove(`overlap--show`);
+        }, 600);
       });
-
-      function onAnimationComplete() {
-        window.location = link.href;
-        overlap.classList.remove(`overlap--show`);
-      }
     }
 
-    addOverlap(prizes);
+    addOverlap(prizesLink);
+
+    function onAnimationComplete(link) {
+      window.location = link.href;
+    }
+
+    // footnote
+    const rulesLink = document.querySelector(`[data-href="rules"]`);
+    const prizeFootnote = document.querySelector(`.screen--prizes .screen__footer-note`);
+
+    function transitionFootnote(link) {
+      rulesLink.addEventListener(`click`, (event) => {
+        event.preventDefault();
+        prizeFootnote.classList.add(`fadeOut`);
+        setTimeout(() => {
+          onAnimationComplete(link);
+          prizeFootnote.classList.remove(`fadeOut`);
+        }, 500);
+      });
+    }
+
+    transitionFootnote(rulesLink);
 
   });
 

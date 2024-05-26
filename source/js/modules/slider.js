@@ -53,12 +53,16 @@ export default () => {
         on: {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
+              body.setAttribute(`data-slide`, `1`);
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
             } else if (storySlider.activeIndex === 2) {
+              body.setAttribute(`data-slide`, `2`);
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
             } else if (storySlider.activeIndex === 4) {
+              body.setAttribute(`data-slide`, `3`);
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
             } else if (storySlider.activeIndex === 6) {
+              body.setAttribute(`data-slide`, `4`);
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
             }
           },
@@ -80,4 +84,22 @@ export default () => {
   });
 
   setSlider();
+
+  // если активный экран истории
+
+  const storyElement = document.querySelector(`[data-href="story"]`);
+  const body = document.querySelector(`body`);
+
+  const observer = new MutationObserver((mutationsList) => {
+    mutationsList.forEach((mutation) => {
+      if (mutation.attributeName === `class` && storyElement.classList.contains(`active`)) {
+        body.setAttribute(`data-slide`, ``);
+      } else if (mutation.attributeName === `class` && !storyElement.classList.contains(`active`)) {
+        body.removeAttribute(`data-slide`);
+      }
+    });
+  });
+
+  observer.observe(storyElement, {attributes: true});
+
 };
